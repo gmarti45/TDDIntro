@@ -18,9 +18,14 @@ public class Library {
 
     public void listBooks() {
         String bookList = "";
-        for (String book : books) {
-            bookList += book + "\n";
+        if (books.size()==1)
+        {
+            bookList = bookList + (books.get(0));
         }
+        else
+            for (String book : books) {
+                bookList += book + "\n";
+            }
         printStream.println(bookList);
     }
 
@@ -42,7 +47,7 @@ public class Library {
 
     public void removeBook() {
         printStream.println("Enter a book to remove from the collection");
-        String book = readLine();
+        String book= readLine();
         if (books.contains(book)){
             books.remove(book);
         }
